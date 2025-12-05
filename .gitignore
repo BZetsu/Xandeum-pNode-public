@@ -30,8 +30,11 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files
+.env
+.env.local
+.env.development
+.env.production
 
 # vercel
 .vercel
@@ -39,3 +42,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Internal development files (patches are in forks, not here)
+/packages/xandminerd-patch/
+/packages/xandminer-patch/
+/packages/LOCAL_TESTING_GUIDE.md
+/packages/PR_TEMPLATES.md
+/docs/XANDMINERD_INVESTIGATION.md
+/docs/FORK_AND_PR_GUIDE.md
+DEVLOG.md
