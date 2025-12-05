@@ -136,12 +136,40 @@ xandeum-pnode-analytics/
 
 ## 🔧 Configuration
 
+### RPC Endpoint
+
+> ⚠️ **Important:** Xandeum does not provide an official public RPC endpoint.
+
+The dashboard currently uses the DevNet RPC found in Xandeum's own codebase (`https://api.devnet.xandeum.com:8899`). For production deployments, you have two options:
+
+**Option 1: Use the existing DevNet endpoint (development/testing)**
+- Works out of the box
+- May have rate limits or availability issues
+- Not guaranteed for production use
+
+**Option 2: Run your own pNode (recommended for production)**
+```
+┌──────────────────┐      ┌──────────────────┐      ┌──────────────────┐
+│   Public Users   │ ──►  │  Your Dashboard  │ ──►  │   Your pNode     │
+│  (just browse)   │      │   (on Vercel)    │      │  (on your VPS)   │
+└──────────────────┘      └──────────────────┘      └──────────────────┘
+```
+- Run a pNode on a VPS (doesn't need to be "onboarded" for storage)
+- Point your dashboard to your pNode's RPC endpoint
+- See [Xandeum Docs](https://docs.xandeum.network) for pNode setup
+
+Set your RPC endpoint via environment variable:
+```bash
+NEXT_PUBLIC_XANDEUM_RPC=https://your-pnode-server:8899
+```
+
 ### Environment Variables
 
 #### Dashboard (.env.local)
 
 | Variable | Default | Description |
 |----------|---------|-------------|
+| `NEXT_PUBLIC_XANDEUM_RPC` | `https://api.devnet.xandeum.com:8899` | Xandeum RPC endpoint |
 | `NEXT_PUBLIC_STATS_SERVICE_URL` | `https://stats.xandscope.io` | Stats service URL |
 
 #### Stats Service (.env)

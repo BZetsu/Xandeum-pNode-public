@@ -5,12 +5,16 @@
 
 /**
  * Xandeum RPC Endpoints
+ * 
+ * NOTE: Xandeum does not provide an official public RPC.
+ * For production, run your own pNode and set NEXT_PUBLIC_XANDEUM_RPC.
+ * See: https://docs.xandeum.network
  */
 export const XANDEUM_RPC_ENDPOINTS = {
-  /** DevNet RPC endpoint */
-  devnet: 'https://api.devnet.xandeum.com:8899',
-  /** MainNet RPC endpoint (TBD) */
-  mainnet: 'https://api.mainnet.xandeum.com:8899',
+  /** DevNet RPC endpoint (configurable via env) */
+  devnet: process.env.NEXT_PUBLIC_XANDEUM_RPC || 'https://api.devnet.xandeum.com:8899',
+  /** MainNet RPC endpoint (configurable via env) */
+  mainnet: process.env.NEXT_PUBLIC_XANDEUM_RPC_MAINNET || 'https://api.mainnet.xandeum.com:8899',
 } as const;
 
 /**
