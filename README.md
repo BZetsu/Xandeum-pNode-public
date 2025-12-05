@@ -11,7 +11,16 @@
 
 XANDSCOPE is a real-time analytics dashboard for the Xandeum pNode network. It provides comprehensive visibility into network health, storage capacity, and individual pNode performance.
 
-![XANDSCOPE Dashboard](docs/screenshots/dashboard.png)
+## 📸 Screenshots
+
+### Network Overview
+![Dashboard Overview](public/dashboard-1.png)
+
+### pNode Statistics
+![pNode Stats](public/dashboard-2.png)
+
+### Global 
+![Detailed View](public/dashboard-3.png)
 
 ## ✨ Features
 
@@ -70,8 +79,8 @@ XANDSCOPE is a real-time analytics dashboard for the Xandeum pNode network. It p
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/xandeum-pnode-analytics.git
-cd xandeum-pnode-analytics
+git clone https://github.com/BZetsu/Xandeum-pNode-public.git
+cd Xandeum-pNode-public
 
 # Install dependencies
 yarn install
@@ -116,15 +125,13 @@ xandeum-pnode-analytics/
 │   ├── types/                  # TypeScript types
 │   └── config/                 # Configuration
 ├── packages/
-│   ├── stats-service/          # Stats aggregation backend
-│   │   └── src/
-│   │       ├── db/             # Database layer
-│   │       ├── routes/         # API routes
-│   │       └── middleware/     # Auth, rate limiting
-│   ├── xandminerd-patch/       # Stats reporter for xandminerd
-│   └── xandminer-patch/        # Toggle component for xandminer
-├── docs/                       # Documentation
-└── DEVLOG.md                   # Development log
+│   └── stats-service/          # Stats aggregation backend
+│       └── src/
+│           ├── db/             # Database layer + schema.sql
+│           ├── routes/         # API routes
+│           ├── middleware/     # Auth, rate limiting
+│           └── types/          # TypeScript interfaces
+└── public/                     # Static assets + screenshots
 ```
 
 ## 🔧 Configuration
@@ -202,10 +209,8 @@ yarn lint
 
 ## 📚 Documentation
 
-- [Development Log](DEVLOG.md) - Full development history
-- [Investigation Report](docs/XANDMINERD_INVESTIGATION.md) - Technical deep-dive
-- [Local Testing Guide](packages/LOCAL_TESTING_GUIDE.md) - Testing instructions
-- [Fork & PR Guide](docs/FORK_AND_PR_GUIDE.md) - Contributing to upstream
+- [Stats Service README](packages/stats-service/README.md) - Backend API documentation
+- [Database Schema](packages/stats-service/src/db/schema.sql) - PostgreSQL schema
 
 ## 🤝 Contributing
 
